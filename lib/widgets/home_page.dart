@@ -23,6 +23,12 @@ class _MyHomePageState extends State<MyHomePage> {
       amount: 16.55,
       date: DateTime.now(),
     ),
+    Transaction(
+      id: 't2',
+      title: 'Weekly Groceries',
+      amount: 103456.55,
+      date: DateTime.now(),
+    ),
   ];
 
   bool isTransactionWithin7Days(Transaction tx) {

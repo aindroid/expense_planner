@@ -1,5 +1,6 @@
 import 'package:expense_planner/models/transaction.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import './transaction_item.dart';
 
@@ -31,21 +32,31 @@ class TransactionList extends StatelessWidget {
             : ListView.builder(
                 itemBuilder: (ctx, index) {
                   final transaction = transactions[index];
-                  return TransactionItem(
-                      amount: transaction.amount,
-                      date: transaction.date,
-                      title: transaction.title);
+                  // return TransactionItem(
+                  //     amount: transaction.amount,
+                  //     date: transaction.date,
+                  //     title: transaction.title);
+                  return Card(
+                    elevation: 1,
+                    margin: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
+                    child: ListTile(
+                      title: Text(
+                        transaction.title,
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                      subtitle: Text(
+                        DateFormat.yMMMd().format(transaction.date),
+                      ),
+                      leading: CircleAvatar(
+                        radius: 30,
+                        child: Padding(
+                            padding: EdgeInsets.all(6),
+                            child: FittedBox(
+                                child: Text('£${transaction.amount}'))),
+                      ),
+                    ),
+                  );
                 },
                 itemCount: transactions.length));
-    // children: [
-    //   ...transactions.map(
-    //     (transaction) {
-    //       return TransactionItem(
-    //           amount: transaction.amount,
-    //           date: transaction.date,
-    //           title: transaction.title);
-    //     },
-    //   ).toList()
-    // ],
   }
 }
