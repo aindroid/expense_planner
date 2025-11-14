@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class UserInput extends StatefulWidget {
   final Function onNewTransactionListener;
-  UserInput(this.onNewTransactionListener);
+  const UserInput(this.onNewTransactionListener, {super.key});
 
   @override
   State<UserInput> createState() => _UserInputState();
@@ -31,11 +31,11 @@ class _UserInputState extends State<UserInput> {
     return Card(
       elevation: 5,
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: [
             TextField(
-              decoration: InputDecoration(labelText: 'Title'),
+              decoration: const InputDecoration(labelText: 'Title'),
               // onChanged: (value) {
               //   titleInput = value;
               // },
@@ -43,7 +43,7 @@ class _UserInputState extends State<UserInput> {
               onSubmitted: (_) => onSubmit(),
             ),
             TextField(
-              decoration: InputDecoration(labelText: 'Amount'),
+              decoration: const InputDecoration(labelText: 'Amount'),
               // onChanged: (value) {
               //   amountInput = value;
               // },
@@ -51,10 +51,12 @@ class _UserInputState extends State<UserInput> {
               keyboardType: TextInputType.number,
               onSubmitted: (_) => onSubmit(),
             ),
-            FlatButton(
+            TextButton(
               onPressed: onSubmit,
-              child: Text('Add Transaction'),
-              textColor: Colors.purple,
+              child: const Text('Add Transaction'),
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.purple,
+              ),
             )
           ],
         ),

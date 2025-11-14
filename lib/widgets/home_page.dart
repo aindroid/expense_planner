@@ -5,6 +5,8 @@ import 'package:expense_planner/widgets/user_input.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -32,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   bool isTransactionWithin7Days(Transaction tx) {
-    return tx.date.isAfter(DateTime.now().subtract(Duration(days: 7)));
+    return tx.date.isAfter(DateTime.now().subtract(const Duration(days: 7)));
   }
 
   List<Transaction> get _recentTransactions {
@@ -67,14 +69,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           _startAddNewTransaction(context);
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Personal Expenses',
         ),
         actions: [
@@ -82,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 _startAddNewTransaction(context);
               },
-              icon: Icon(Icons.add))
+              icon: const Icon(Icons.add))
         ],
       ),
       body: SingleChildScrollView(

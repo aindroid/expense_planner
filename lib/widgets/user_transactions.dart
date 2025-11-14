@@ -4,6 +4,7 @@ import './user_input.dart';
 import 'package:expense_planner/models/transaction.dart';
 
 class UserTransactions extends StatefulWidget {
+  const UserTransactions({super.key});
 
   @override
   State<UserTransactions> createState() => _UserTransactionsState();
@@ -43,6 +44,9 @@ class _UserTransactionsState extends State<UserTransactions> {
     return Column(
         // mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [UserInput(_addNewTransaction), TransactionList(_transactions)]);
+        children: [
+          UserInput(_addNewTransaction),
+          TransactionList(_transactions)
+        ]);
   }
 }

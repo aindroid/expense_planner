@@ -5,14 +5,14 @@ class TransactionItem extends StatelessWidget {
   final String title;
   final double amount;
   final DateTime date;
-  String formattedDate = '';
+  final String formattedDate;
 
   TransactionItem(
-      {required this.title, required this.amount, required this.date}) {
-    var format = DateFormat.yMMMd('en_US');
-    // var format = DateFormat('dd/MM/yyyy', 'en_US');
-    formattedDate = format.format(date);
-  }
+      {super.key,
+      required this.title,
+      required this.amount,
+      required this.date})
+      : formattedDate = DateFormat.yMMMd('en_US').format(date);
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +20,8 @@ class TransactionItem extends StatelessWidget {
         child: Row(
       children: [
         Container(
-          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-          padding: EdgeInsets.all(10),
+          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+          padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
               border:
                   Border.all(color: Theme.of(context).primaryColor, width: 2)),
@@ -38,7 +38,7 @@ class TransactionItem extends StatelessWidget {
           children: [
             Text(
               title,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             Text(
               formattedDate,

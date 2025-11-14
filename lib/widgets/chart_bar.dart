@@ -5,8 +5,9 @@ class ChartBar extends StatelessWidget {
   final double spendingAmount;
   final double spendingPercentageTotal;
 
-  ChartBar(
-      {required this.label,
+  const ChartBar(
+      {super.key,
+      required this.label,
       required this.spendingAmount,
       required this.spendingPercentageTotal});
 
@@ -15,10 +16,10 @@ class ChartBar extends StatelessWidget {
     return Column(
       children: [
         FittedBox(child: Text('£${spendingAmount.toStringAsFixed(0)}')),
-        SizedBox(
+        const SizedBox(
           height: 6,
         ),
-        Container(
+        SizedBox(
           height: 60,
           width: 10,
           child: Stack(
@@ -26,7 +27,7 @@ class ChartBar extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.grey, width: 1),
-                    color: Color.fromRGBO(220, 220, 220, 1),
+                    color: const Color.fromRGBO(220, 220, 220, 1),
                     borderRadius: BorderRadius.circular(20)),
               ),
               FractionallySizedBox(
@@ -40,7 +41,7 @@ class ChartBar extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 4,
         ),
         Text(label),

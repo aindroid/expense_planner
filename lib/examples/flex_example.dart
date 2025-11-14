@@ -7,8 +7,8 @@ class MyAltHomePage extends StatelessWidget {
     children: <Widget>[
       Container(
         height: 100,
-        child: Text('Item 1'),
         color: Colors.red,
+        child: Text('Item 1'),
       ),
       Expanded(
         flex: 5,
@@ -16,8 +16,8 @@ class MyAltHomePage extends StatelessWidget {
         child: Container(
           height: 100,
           width: 100,
-          child: Text('Item 2'),
           color: Colors.blue,
+          child: Text('Item 2'),
         ),
       ),
       Flexible(
@@ -25,8 +25,8 @@ class MyAltHomePage extends StatelessWidget {
         fit: FlexFit.loose,
         child: Container(
           height: 100,
-          child: Text('Item 3'),
           color: Colors.orange,
+          child: Text('Item 3'),
         ),
       ),
     ],
@@ -37,18 +37,18 @@ class MyAltHomePage extends StatelessWidget {
     children: <Widget>[
       Container(
         height: 100,
-        child: Text('Item 1 - pretty big!'),
         color: Colors.red,
+        child: Text('Item 1 - pretty big!'),
       ),
       Container(
         height: 100,
-        child: Text('Item 2'),
         color: Colors.blue,
+        child: Text('Item 2'),
       ),
       Container(
         height: 100,
-        child: Text('Item 3'),
         color: Colors.orange,
+        child: Text('Item 3'),
       ),
     ],
   );
@@ -60,8 +60,8 @@ class MyAltHomePage extends StatelessWidget {
         flex: 1,
         child: Container(
           height: 100,
-          child: Text('Item 1'),
           color: Colors.red,
+          child: Text('Item 1'),
         ),
       ),
       Expanded(
@@ -70,20 +70,22 @@ class MyAltHomePage extends StatelessWidget {
         child: Container(
           height: 100,
           width: 100,
-          child: Text('Item 2'),
           color: Colors.blue,
+          child: Text('Item 2'),
         ),
       ),
       Expanded(
         flex: 1,
         child: Container(
           height: 100,
-          child: Text('Item 3'),
           color: Colors.orange,
+          child: Text('Item 3'),
         ),
       ),
     ],
   );
+
+  MyAltHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {

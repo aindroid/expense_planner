@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     final titleTextStyle = ThemeData.light().appBarTheme.titleTextStyle;
@@ -14,7 +16,18 @@ class MyApp extends StatelessWidget {
               .colorScheme
               .copyWith(secondary: Colors.amber, primary: Colors.purple),
           textTheme: ThemeData.light().textTheme.copyWith(
-                headline6: TextStyle(
+                bodyLarge: const TextStyle(
+                  fontFamily: 'Quicksand',
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                bodyMedium: const TextStyle(
+                  fontFamily: 'Quicksand',
+                  fontSize: 14,
+                  color: Colors.black,
+                ),
+                titleLarge: const TextStyle(
                     fontFamily: 'OpenSans',
                     fontSize: 16,
                     fontWeight: FontWeight.bold),
@@ -22,7 +35,7 @@ class MyApp extends StatelessWidget {
           appBarTheme: AppBarTheme(
               titleTextStyle: titleTextStyle != null
                   ? titleTextStyle.copyWith(fontFamily: 'OpenSans')
-                  : TextStyle(
+                  : const TextStyle(
                       fontFamily: 'OpenSans',
                       fontSize: 20,
                       fontWeight: FontWeight.bold)),
