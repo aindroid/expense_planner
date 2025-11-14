@@ -26,10 +26,16 @@ class _MyHomePageState extends State<MyHomePage> {
       date: DateTime.now(),
     ),
     Transaction(
-      id: 't2',
+      id: 't3',
       title: 'Weekly Groceries',
       amount: 103456.55,
       date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't4',
+      title: 'Groceries',
+      amount: 66456.55,
+      date: DateTime.now().subtract(const Duration(days: 1)),
     ),
   ];
 
@@ -90,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Column(
             // mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Chart(_recentTransactions),
               TransactionList(_transactions)
