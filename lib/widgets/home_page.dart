@@ -17,25 +17,31 @@ class _MyHomePageState extends State<MyHomePage> {
       id: 't1',
       title: 'New Shoes',
       amount: 69.99,
-      date: DateTime.now(),
+      date: DateTime.now().subtract(const Duration(days: 2)),
     ),
     Transaction(
       id: 't2',
       title: 'Weekly Groceries',
       amount: 16.55,
-      date: DateTime.now(),
+      date: DateTime.now().subtract(const Duration(days: 2)),
     ),
     Transaction(
       id: 't3',
       title: 'Weekly Groceries',
-      amount: 103456.55,
-      date: DateTime.now(),
+      amount: 73456.55,
+      date: DateTime.now().subtract(const Duration(days: 2)),
     ),
     Transaction(
       id: 't4',
       title: 'Groceries',
       amount: 66456.55,
-      date: DateTime.now().subtract(const Duration(days: 1)),
+      date: DateTime.now().subtract(const Duration(days: 2)),
+    ),
+    Transaction(
+      id: 't5',
+      title: 'Deliveroo',
+      amount: 36456.55,
+      date: DateTime.now().subtract(const Duration(days: 4)),
     ),
   ];
 

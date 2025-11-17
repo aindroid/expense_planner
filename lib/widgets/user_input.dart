@@ -53,10 +53,10 @@ class _UserInputState extends State<UserInput> {
             ),
             TextButton(
               onPressed: onSubmit,
-              child: const Text('Add Transaction'),
               style: TextButton.styleFrom(
                 foregroundColor: Colors.purple,
               ),
+              child: const Text('Add Transaction'),
             )
           ],
         ),
